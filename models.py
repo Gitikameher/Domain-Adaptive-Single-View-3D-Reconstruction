@@ -117,8 +117,6 @@ class _F_(nn.Module):
             nn.BatchNorm2d(ndf * 16),
             nn.LeakyReLU(0.2, inplace=True),
             # state size. (ndf*16) x 4 x 4
-            nn.Conv2d(ndf * 16, 1, 4, stride=1, padding=0, bias=False)
-            # state size. 1
         )
     def forward(self, input):
         return torch.flatten(self.main(input), start_dim =1)
